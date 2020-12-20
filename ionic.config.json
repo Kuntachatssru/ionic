@@ -1,0 +1,7 @@
+{
+  "name": "ion-kuntachat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
