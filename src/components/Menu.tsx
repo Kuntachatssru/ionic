@@ -12,7 +12,25 @@ import {
 
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import {
+  chevronForwardOutline,
+  homeOutline ,
+  homeSharp,
+  logInOutline ,
+  logInSharp,
+  personAddOutline ,
+  personSharp,
+  cafeOutline,
+  cafeSharp,
+  cartOutline,
+  cartSharp,
+  cashOutline,
+  cashSharp,
+  callOutline,
+  callSharp,
+
+  
+} from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -24,44 +42,50 @@ interface AppPage {
 
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
+    title: 'หน้าหลัก',
     url: '/page/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: homeOutline,
+    mdIcon: homeSharp
   },
   {
-    title: 'Outbox',
+    title: 'เข้าสู่ระบบ',
     url: '/page/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    iosIcon: logInOutline,
+    mdIcon: logInSharp
   },
   {
-    title: 'Favorites',
+    title: 'ลงทะเบียน',
     url: '/page/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
+    iosIcon: personAddOutline,
+    mdIcon: personSharp
   },
   {
-    title: 'Archived',
+    title: 'สินค้า',
     url: '/page/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    iosIcon: cafeOutline,
+    mdIcon: cafeSharp
   },
   {
-    title: 'Trash',
+    title: 'ตะกร้าสินค้า',
     url: '/page/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
+    iosIcon: cartOutline,
+    mdIcon: cartSharp
   },
   {
-    title: 'Spam',
+    title: 'ชำระเงิน',
     url: '/page/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
+    iosIcon: cashOutline,
+    mdIcon: cashSharp
+  },
+  {
+    title: 'ติดต่อเรา',
+    url: '/page/Spam',
+    iosIcon: callOutline,
+    mdIcon: callSharp
   }
 ];
 
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+const labels = ['Apple', 'Xiomi', 'Vivo', 'Huawei', 'rrealme', 'Banana'];
 
 const Menu: React.FC = () => {
   const location = useLocation();
@@ -88,7 +112,7 @@ const Menu: React.FC = () => {
           <IonListHeader>Labels</IonListHeader>
           {labels.map((label, index) => (
             <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
+              <IonIcon slot="end" icon={chevronForwardOutline} />
               <IonLabel>{label}</IonLabel>
             </IonItem>
           ))}
